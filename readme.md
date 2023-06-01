@@ -4,6 +4,7 @@
 ------------------------
 
 A API JSONCraft é uma biblioteca Kotlin que permite trabalhar com dados no formato JSON.
+[Ver logotipo](APILogo.png.url)
 
 
 
