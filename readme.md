@@ -1,10 +1,15 @@
-=========================================
-             API JSONCraft
-=========================================
+
+
+# API JSONCraft
+------------------------
 
 A API JSONCraft é uma biblioteca Kotlin que permite trabalhar com dados no formato JSON.
 
-Tipos de Dados JSON:
+
+
+
+
+**Tipos de Dados JSON:**
 -------------------
 A API JSONCraft suporta os seguintes tipos de dados JSON:
 
@@ -14,6 +19,10 @@ A API JSONCraft suporta os seguintes tipos de dados JSON:
 - JSON Boolean: Representa um valor booleano (true ou false).
 - JSON Number: Representa um valor numérico, seja um inteiro ou um de virgula flutuante.
 - JSON Null: Representa a ausência de um valor.
+
+
+
+
 
 JSONTextBuilder:
 ------------------
@@ -36,17 +45,17 @@ Exemplo de uso do JSONTextBuilder:
 
 	val visitor = JSONTextBuilder()
 	val jsonObject = JSONObject(
-    	mapOf(
-        	"nome" to JSONString("Rafael"),
-        	"idade" to JSONNumber(21),
-        	"amigos" to JSONArray(
-            	listOf(
-                	JSONString("Alexandre"),
-                	JSONString("Luís"),
-                	JSONString("João")
-            	)
-        	)
-    	)
+		mapOf(
+	    	"nome" to JSONString("Rafael"),
+	    	"idade" to JSONNumber(21),
+	    	"amigos" to JSONArray(
+	        	listOf(
+	            	JSONString("Alexandre"),
+	            	JSONString("Luís"),
+	            	JSONString("João")
+	        	)
+	    	)
+		)
 	)
 	jsonObject.accept(visitor)
 	val jsonText = visitor.getJsonString()
@@ -57,6 +66,10 @@ O JSONTextBuilder percorre a estrutura JSON e constrói o texto JSON corresponde
 
 Output obtido: {"nome" : "Rafael", "idade" : 21, "amigos" : ["Alexandre", "Luís", "João"]}
 
+
+
+
+
 Annotations:
 ------------------
 
@@ -66,34 +79,37 @@ A API JSONCraft fornece algumas anotações que podem ser usadas para personaliz
 - @JSONPersonalize: Essa anotação pode ser usada em propriedades de uma classe de dados para fornecer um nome personalizado para a propriedade durante a serialização para JSON. O valor da anotação é o nome personalizado desejado.
 - @JSONForceString: Essa anotação pode ser usada em propriedades de uma classe de dados para forçar a serialização do valor como uma string, mesmo que o tipo real seja diferente.
 
-Exemplo: 
+Exemplo:
 
-data class Student(
-    @JSONForceString
-    val number: Int,
-    
-    @JSONPersonalize("nome estudante")
-    val name: String,
-    
-    @JSONIgnore
-    val type: StudentType? = null,
-    
-    val year_failed: Boolean
-)
+    data class Student(
+      @JSONForceString
+      val number: Int,
 
-fun main() {
+      @JSONPersonalize("nome estudante")
+      val name: String,
 
-    val visitor = JSONTextBuilder()
-    val estudante = Student(7,"rafael", StudentType.Master, true)
-    val model = createModelFromObject(estudante)
-    model.accept(visitor)
-    val jsonText = visitor.getJsonString()
-    println(jsonText)
-}
+      @JSONIgnore
+      val type: StudentType? = null,
+
+      val year_failed: Boolean
+    )
+
+    fun main() {
+      val visitor = JSONTextBuilder()
+      val estudante = Student(7,"rafael", StudentType.Master, true)
+      val model = createModelFromObject(estudante)
+      model.accept(visitor)
+      val jsonText = visitor.getJsonString()
+      println(jsonText)
+    }
 
 Neste exemplo, a propriedade "number" será sempre serializada como uma string, a propriedade "name" terá o nome "nome estudante" durante a serialização e a propriedade "type" será ignorada durante a serialização.
 
 Output obtido: {"number" : "7", "nome estudante" : "rafael", "year_failed" : true}
+
+
+
+
 
 Utilização:
 ------------------
@@ -106,37 +122,41 @@ Para utilizar a API JSONCraft em seu projeto Kotlin, siga as etapas abaixo:
 
 Aqui está um exemplo básico de utilização da API JSONCraft:
 
-fun main() {
-    // Cria um objeto JSON
-    val jsonObject = JSONObject(
-        mapOf(
-            "nome" to JSONString("João"),
-            "idade" to JSONNumber(25),
-            "ativo" to JSONBoolean(true),
-            "amigos" to JSONArray(
-                listOf(
-                    JSONString("Maria"),
-                    JSONString("Pedro"),
-                    JSONString("Ana")
+    fun main() {
+        // Cria um objeto JSON
+        val jsonObject = JSONObject(
+            mapOf(
+                "nome" to JSONString("João"),
+                "idade" to JSONNumber(25),
+                "ativo" to JSONBoolean(true),
+                "amigos" to JSONArray(
+                    listOf(
+                        JSONString("Maria"),
+                        JSONString("Pedro"),
+                        JSONString("Ana")
+                    )
                 )
             )
         )
-    )
 
-    // Constrói uma representação de texto JSON do objeto JSON
-    val jsonTextBuilder = JSONTextBuilder()
-    jsonObject.accept(jsonTextBuilder)
-    val jsonText = jsonTextBuilder.getJsonString()
+        // Constrói uma representação de texto JSON do objeto JSON
+        val jsonTextBuilder = JSONTextBuilder()
+        jsonObject.accept(jsonTextBuilder)
+        val jsonText = jsonTextBuilder.getJsonString()
 
-    // Imprime o objeto JSON e o texto JSON resultante
-    println("Objeto JSON:")
-    println(jsonObject)
-    println("Texto JSON:")
-    println(jsonText)
-}
+        // Imprime o objeto JSON e o texto JSON resultante
+        println("Objeto JSON:")
+        println(jsonObject)
+        println("Texto JSON:")
+        println(jsonText)
+    }
 
-Neste exemplo, criamos um objeto JSON com as propriedades: "nome", "idade", "ativo" e "amigos". De seguida, usamos o JSONTextBuilder para construir uma representação de texto JSON desse objeto. 
+Neste exemplo, criamos um objeto JSON com as propriedades: "nome", "idade", "ativo" e "amigos". De seguida, usamos o JSONTextBuilder para construir uma representação de texto JSON desse objeto.
 Por fim, imprimimos o objeto JSON e o texto JSON resultante.
+
+
+
+
 
 Extensões da API:
 -----------------------
@@ -146,6 +166,11 @@ A API JSONCraft também fornece algumas extensões úteis para trabalhar com ele
 - getValuesOfProperty(property: String): List<JSONElement>: Retorna uma lista de valores de uma propriedade específica presente num elemento JSON.
 - validateNumeroProperty(): Boolean: Valida a presença da propriedade "numero" como um JSONNumber.
 - validateInscritosProperty(): Boolean: Valida a propriedade "inscritos" como um JSONArray com propriedades consistentes.
+
+
+
+
+
 
 Considerações Finais:
 -----------------------
