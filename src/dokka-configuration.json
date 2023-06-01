@@ -1,0 +1,23 @@
+{
+  "outputDir": "./dokka/html",
+  "sourceSets": [
+    {
+      "sourceSetID": {
+        "scopeId": "moduleName",
+        "sourceSetName": "main"
+      },
+      "sourceRoots": [
+        "main/kotlin/Fase1"
+		 
+      ]
+    }
+  ],
+  "pluginsClasspath": [
+    "./dokka-base-1.8.10.jar",
+    "./kotlinx-html-jvm-0.8.0.jar",
+    "./dokka-analysis-1.8.10.jar",
+    "./kotlin-analysis-intellij-1.8.10.jar",
+    "./kotlin-analysis-compiler-1.8.10.jar",
+    "./freemarker-2.3.31.jar"
+  ]
+}
