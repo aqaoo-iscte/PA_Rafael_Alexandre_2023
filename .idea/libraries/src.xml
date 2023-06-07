@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="src">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/dokka-cli-1.8.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/dokka-base-1.8.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/freemarker-2.3.31.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/kotlin-analysis-compiler-1.8.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/kotlinx-html-jvm-0.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/dokka-analysis-1.8.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/kotlin-analysis-intellij-1.8.10.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

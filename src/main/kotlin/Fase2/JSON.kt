@@ -147,7 +147,6 @@ data class JSONArray(val elements: MutableList<JSONElement>) : JSONElement {
         }
     }
 
-
     fun remove(name: String, jsonElement: JSONElement, clickedComponent: Component) {
         (elements[(clickedComponent as JSONEditorView.ElementsInBoard).index!!] as JSONObject).remove(
             name,

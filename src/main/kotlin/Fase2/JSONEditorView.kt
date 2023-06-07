@@ -163,8 +163,6 @@ class JSONEditorView(private val model: JSONObject) : JPanel() {
                 add(ElementsInBoard(key,(value as JSONObject).properties.values.first(), clickedElement, clickedElement.elements.size - 1), lastIndex + 1
             )
         } else if (father != null) {
-            println("-------------------")
-            println(index)
             val lastIndex =
                 components.indexOfFirst { it is ElementsInBoard && it.matchesHash(clickedComponent.hashCode()) }
             add(ElementsInBoard(key, value, father, index), lastIndex + 1)
