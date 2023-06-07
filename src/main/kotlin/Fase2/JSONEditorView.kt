@@ -82,9 +82,6 @@ class JSONEditorView(private val model: JSONObject) : JPanel() {
                         val clickedBox = clickedComponent
                         val clickedKey = clickedBox.key
                         val clickedValue = clickedBox.value
-                        println(clickedBox.father)
-                        println(clickedBox.value)
-                        println(clickedBox.index)
                         val menu = JPopupMenu("Message")
                         val add = JButton("add")
                         add.addActionListener {
@@ -179,8 +176,6 @@ class JSONEditorView(private val model: JSONObject) : JPanel() {
 
     fun replaceElement(old: Pair<String, JSONElement>, new: JSONElement) {
         val find = components.find { it is ElementsInBoard && it.matches(old.second) } as? ElementsInBoard
-        println(find?.value)
-        println(find?.father)
         find?.let { find.modify(new) }
         revalidate()
     }
