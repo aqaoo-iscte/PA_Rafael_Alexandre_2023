@@ -114,7 +114,7 @@ Output obtido: {"number" : "7", "nome estudante" : "rafael", "year_failed" : tru
 
 Utilização:
 ------------------
-Para utilizar a API JSONCraft em seu projeto Kotlin, siga as etapas abaixo:
+Para utilizar a API JSONCraft no seu projeto Kotlin, siga as etapas abaixo:
 
 1. Importe as classes necessárias do pacote Fase1.
 2. Crie objetos JSON, arrays, strings, booleanos, números ou valores nulos conforme necessário.
